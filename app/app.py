@@ -1,5 +1,5 @@
 from flask import Flask
-
+from flask_sqlalchemy import SQLAlchemy
 from config import config
 
 # This line imports the post blueprint from the posts.blueprint module. 
@@ -16,4 +16,7 @@ app.config.from_object(config)
 # The url_prefix argument specifies that all the routes defined in the post blueprint will be prefixed with /blog
 # . For example, if the post blueprint has a route /create, it will be accessible at /blog/create.
 app.register_blueprint(post, url_prefix="/blog")
-# local host 5000 block address
+
+
+# When you call SQLAlchemy(app), you are creating an instance of the SQLAlchemy class and passing the Flask app instance (app) to it.
+db = SQLAlchemy(app)

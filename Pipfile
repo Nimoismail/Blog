@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 virtualenv = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
