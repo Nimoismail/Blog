@@ -1,16 +1,16 @@
-from app import db
+from app import db, app
 from datetime import datetime
 
 
 def slugify(s):
     pass
 
-class post(db.Model):
-    id = db.coloum(db.Integer, primary_key = True)
-    title = db.coloum(db.string(140))
-    slug = db.coloum(db.string(140), unique = True)
-    body = db.coloum(db.text(2000))
-    created = db.coloumn(db.DateTime, default =datetime.now() )
+class Post(db.Model): 
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(140))
+    slug = db.Column(db.String(140), unique=True)
+    body = db.Column(db.Text(2000))
+    created = db.Column(db.DateTime, default=datetime.now() )
 
 # constructer
 
